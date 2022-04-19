@@ -1,8 +1,8 @@
-import rvmm
-from rvmm import contributors
+import metrics
+from metrics import contributors
 
 if __name__ == "__main__":
-    year = rvmm.get_quarter_of(2019)
+    year = metrics.get_quarter_of(2019)
     for q in year:
         print(q[0])
         # all_contribs = get_unique_contributors(since=q[1], until=q[2])

@@ -1,5 +1,5 @@
 import github
-import rvmm
+import metrics
 
 
 def unique(elems):
@@ -15,7 +15,7 @@ def flatten(list):
 
 
 def get_unique_contributors(since=github.GithubObject.NotSet, until=github.GithubObject.NotSet):
-    repos = rvmm.get_repos()
+    repos = metrics.get_repos()
     all_contribs = list(map(lambda repo: get_repo_contributors(repo, since, until), repos))
     # all_contribs contains a list of lists, we need to flatten it first
     return unique(flatten(all_contribs))
@@ -47,5 +47,5 @@ def get_repo_commits(repo: github.Repository, since=github.GithubObject.NotSet,
 
 def get_commits(since=github.GithubObject.NotSet,
                 until=github.GithubObject.NotSet):
-    repos = rvmm.get_repos()
+    repos = metrics.get_repos()
     return flatten(list(map(lambda repo: get_repo_commits(repo, since, until), repos)))
