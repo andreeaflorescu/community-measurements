@@ -17,7 +17,7 @@ if __name__ == "__main__":
                         help='Year for which to get the stats. By default the current year is showed.')
     parser.add_argument('-e', '--end-year', type=int, dest='end_year', default=datetime.date.today().year,
                         help='Year until when to get the stats. This will by default be set to the current year.')
-    parser.add_argument('-v', '--verbose', help="Print details about the commits/contributors.")
+    parser.add_argument('-v', '--verbose', action="store_true", help="Print details about the commits/contributors.")
 
     args = parser.parse_args()
     org = args.github_org
