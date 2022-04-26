@@ -13,9 +13,9 @@ if __name__ == "__main__":
                         help='Action to take.')
 
     parser.add_argument('-g', '--github-org', action='store', type=str, dest='github_org', default='rust-vmm')
-    parser.add_argument('-s', '--start-year', type=str, dest='start_year', default=datetime.date.today().year,
+    parser.add_argument('-s', '--start-year', type=int, dest='start_year', default=datetime.date.today().year,
                         help='Year for which to get the stats. By default the current year is showed.')
-    parser.add_argument('-e', '--end-year', type=str, dest='end_year', default=datetime.date.today().year,
+    parser.add_argument('-e', '--end-year', type=int, dest='end_year', default=datetime.date.today().year,
                         help='Year until when to get the stats. This will by default be set to the current year.')
     parser.add_argument('-v', '--verbose', help="Print details about the commits/contributors.")
 
